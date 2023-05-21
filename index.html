@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="assets/css/plugins/owl.carousel.min.css">
         <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="canonical" href="">
+          <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/logo/favicon-32x32.png" type="image/svg+xml">
     </head>
     <!-- =================Body Started==================== -->
     <body>
@@ -1886,7 +1890,15 @@
                 </div>
             </div>
             </div>
+
+            <a id="back-to-top" href="#" class="back-to-top-btn">
+                <img src="assets/images/logo/chevron.png" alt="Voleur orange" class="thief-icon">
+            </a>
         </footer>
+
+    
+
+
         <!-- ================================================================= -->
 		<!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
         <!-- =================Footer End================ -->
@@ -1928,5 +1940,17 @@
             });
           });
         });
+      </script>
+
+      <script>
+        window.addEventListener('scroll', function() {
+    var backToTopBtn = document.getElementById('back-to-top');
+    if (window.scrollY > 200) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
       </script>
 </html>
