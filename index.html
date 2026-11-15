@@ -152,31 +152,6 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <div style="text-align: center; margin: 20px;">
- <div style="text-align: center; margin: 20px;">
-    <button id="open-game-istanbul" style="padding: 15px 25px; background: #D32F2F; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        🎁 Cliquez ici pour votre cadeau !
-    </button>
-</div>
-
-<div id="game-popup-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center; backdrop-filter: blur(8px); padding: 20px;">
-    
-    <div style="position: relative; width: 100%; max-width: 400px; height: 600px; background: transparent;">
-        
-        <button onclick="closeIstanbulGame()" 
-                style="position: absolute; top: -15px; right: -15px; z-index: 100001; background: #ffcc00; color: #1a1a1a; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 20px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center;">
-          ✕
-        </button>
-
-        <iframe 
-            id="game-iframe"
-            src="" 
-            style="width: 100%; height: 100%; border: none; border-radius: 25px; background: transparent;"
-            allow="clipboard-write"
-            allowtransparency="true">
-        </iframe>
-    </div>
-</div>
                 </div>
             </section>
             <!-- --------------------------------------------------------------------------- -->
@@ -1989,42 +1964,4 @@
 
       </script>
 
-      <script>
-const overlay = document.getElementById('game-popup-overlay');
-const iframe = document.getElementById('game-iframe');
-
-// Configuration des données Istanbul Kebab
-const config = {
-    baseUrl: "https://restaurantgame.netlify.app/",
-    params: new URLSearchParams({
-        name: "Istanbul Kebab",
-        logo: "https://istanbulkebab.fr/assets/images/logo/logo.png",
-        google: "https://g.page/r/Cb144PinpCh2EAE/review",
-        fb: "https://www.facebook.com/responsable32-94s?locale=fr_FR",
-        insta: "https://www.instagram.com/istanbulkebab/"
-    }).toString()
-};
-
-// Fonction pour ouvrir le jeu
-function openIstanbulGame() {
-    if (iframe.src === "" || iframe.src === window.location.href) {
-        iframe.src = config.baseUrl + "?" + config.params;
-    }
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-}
-
-// Fonction pour fermer le jeu
-function closeIstanbulGame() {
-    overlay.style.display = 'none';
-    iframe.src = ""; // Stop le jeu
-    document.body.style.overflow = 'auto';
-}
-
-// DECLENCHEMENT 1 : Au clic sur ton bouton
-document.getElementById('open-game-istanbul').addEventListener('click', openIstanbulGame);
-
-// DECLENCHEMENT 2 : Automatique après 5 secondes
-setTimeout(openIstanbulGame, 5000);
-</script>
 </html>
